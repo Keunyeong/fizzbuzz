@@ -13,34 +13,53 @@
     <div id="printNum"></div>
 
     <script>
-        let a=0;
-        const printNum = document.getElementById("printNum");
-        printNum.innerText = a;
+        // let a=0;
+        // const printNum = document.getElementById("printNum");
+        // printNum.innerText = a;
 
-        document.querySelector("#startBtn").addEventListener("click",function(){
-            a = 0;
-            printNum.innerText = a;
-        })
+        // document.querySelector("#startBtn").addEventListener("click",function(){
+        //     a = 1;
+        //     printNum.innerText = a;
+        //     document.querySelector("#startBtn").innerText="다시 시작";
+        // })
 
-        document.querySelector("#nextBtn").addEventListener("click",function(){
-            ++a;
-            if(a%15===0){
-                printNum.innerText = 'fizzbuzz';
-                return
-            } else if(a%3 === 0){
-                printNum.innerText = 'fizz';
-                return
-            } else if ( a%5 === 0){
-                printNum.innerText = 'buzz';
-                return
-            } else if ( a===101){
-                printNum.innerText = 'FINISH!!';
-                a=0;
-                return
+        // document.querySelector("#nextBtn").addEventListener("click",function(){
+        //     ++a;
+        //     if(a%15===0){
+        //         printNum.innerText = 'fizzbuzz';
+        //         return
+        //     } else if(a%3 === 0){
+        //         printNum.innerText = 'fizz';
+        //         return
+        //     } else if ( a%5 === 0){
+        //         printNum.innerText = 'buzz';
+        //         return
+        //     } else if ( a===101){
+        //         printNum.innerText = 'FINISH!!';
+        //         a=0;
+        //         document.querySelector("#startBtn").innerText="시작";
+        //         return
+        //     }
+        //     printNum.innerText = a;
+        // })
+
+        let a = [];
+        for(let i=1; i<101; i++){
+            a.push(i);
+        }
+        a.forEach((n)=>{
+            if(n%15!==0){
+                if(n%3===0){
+                    n='fizz';
+                } else if (n%5===0) {
+                    n='buzz';
             }
-            printNum.innerText = a;
-        })
-
+            }
+            if (n%15===0){
+                n='fizzbuzz';
+            }
+            console.log(n);
+        });
     </script>
 </body>
 </html>
