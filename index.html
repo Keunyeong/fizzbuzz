@@ -33,6 +33,10 @@
             } else if ( a%5 === 0){
                 printNum.innerText = 'buzz';
                 return
+            } else if ( a===101){
+                printNum.innerText = 'FINISH!!';
+                a=0;
+                return
             }
             printNum.innerText = a;
         })
