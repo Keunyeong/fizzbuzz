@@ -11,6 +11,7 @@
     <Button id="startBtn">시작</Button>
     <Button id="nextBtn">다음!</Button>
     <div id="printNum"></div>
+    <Button id="otherType">foreach로 console 에 출력</Button>
 
     <script>
         // let a=0;
@@ -43,23 +44,27 @@
         //     printNum.innerText = a;
         // })
 
-        let a = [];
-        for(let i=1; i<101; i++){
-            a.push(i);
-        }
-        a.forEach((n)=>{
-            if(n%15!==0){
-                if(n%3===0){
-                    n='fizz';
-                } else if (n%5===0) {
-                    n='buzz';
+        //foreach console 출력
+        document.querySelector("#otherType").addEventListener("click",function(){
+            let a = [];
+            for(let i=1; i<101; i++){
+                a.push(i);
             }
-            }
-            if (n%15===0){
-                n='fizzbuzz';
-            }
-            console.log(n);
-        });
+            a.forEach((n)=>{
+                if(n%15!==0){
+                    if(n%3===0){
+                        n='fizz';
+                    } else if (n%5===0) {
+                        n='buzz';
+                }
+                }
+                if (n%15===0){
+                    n='fizzbuzz';
+                }
+                console.log(n);
+            });
+        })
+        
     </script>
 </body>
 </html>
